@@ -98,18 +98,18 @@ jobs:
           } > site/index.html
 
       # Uncomment when enabling GitHub Pages:
-      # - name: Upload pages artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: site
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deploy.outputs.page_url }}
-  #   steps:
-  #     - name: Deploy
-  #       id: deploy
-  #       uses: actions/deploy-pages@v4
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4
