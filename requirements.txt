@@ -2,4 +2,4 @@ picobuild>=0.1.0
 pytest
 Cython>=3.0.0
 sphinx
-sphinx-rtd-theme
+sphinx-rtd-theme    
